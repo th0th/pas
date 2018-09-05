@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/BurntSushi/toml"
 	"github.com/kelseyhightower/envconfig"
+	"github.com/putdotio/pas/internal/pas"
 )
 
 // Config for application
@@ -15,6 +16,8 @@ type Config struct {
 	MySQLDSN string
 	// Secret for signing user IDs.
 	Secret string
+	// Corresponds to the schema of the database.
+	Events pas.Schema
 }
 
 func NewConfig() (*Config, error) {
